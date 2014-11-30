@@ -29,5 +29,5 @@
 
  /*** create the database registry object ***/
 
-$registry->db = new MysqliDb ('localhost', 'root', 'root', 'demo');
+$registry->db = new MysqliDb ('localhost', 'root', '', 'php_tarea');
 ?>

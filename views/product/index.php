@@ -2,12 +2,12 @@
 <?php
 foreach ($productos as $key => $producto) {
 		$img_url = 'application/public/images/products/'.$producto['img'];
-		$name = $producto['name'];
-		$price = $producto['price'];
+		$name = $producto['nombre'];
+		$price = $producto['precio'];
 ?>	
 		<li>
 			<a href="#" class="item">
-				<img src="<? echo $img_url; ?>"/>
+				<img src="<?php echo $img_url; ?>"/>
 				<div>
 					<p>Name:<?php echo $name; ?></p>
 					<p>Price:<span><?php echo $price; ?></span></p>

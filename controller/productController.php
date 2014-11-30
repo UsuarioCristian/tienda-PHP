@@ -6,7 +6,7 @@ Class productController Extends baseController {
 		/*** set a template variable ***/
 	        $this->registry->template->welcome = 'Carro de compras';
 		/*** load the index template ***/
-			$productos = $this->registry->db->get('internet_shop');
+			$productos = $this->registry->db->get('productos');
 			$this->registry->template->productos = $productos;
 
 	        $this->registry->template->show('product/index');
@@ -14,7 +14,7 @@ Class productController Extends baseController {
 
 	public function getProductos(){
 
-		$productos = $this->registry->db->get('internet_shop');
+		$productos = $this->registry->db->get('productos');
 
 		$this->registry->template->productos = $productos;
 		$this->registry->template->show('product/list');
