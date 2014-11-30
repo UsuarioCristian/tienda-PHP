@@ -27,9 +27,9 @@ Class productController Extends baseController {
 
 		foreach ($items as $key => $item) {
 			# code...
-			$this->registry->db->insert('pedidos', array('name'=>$item->name,
-													      'quantity'=>$item->quantity,
-													      'price'=>$item->price));
+			$this->registry->db->insert('pedidos', array('nombre'=>$item->name,
+													      'cantidad'=>$item->quantity,
+													      'precio'=>$item->price));
 		}
 	}
 

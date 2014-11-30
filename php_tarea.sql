@@ -80,6 +80,18 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 --
+-- Table structure for table `pedidos`
+--
+
+CREATE TABLE IF NOT EXISTS `pedidos` (
+  `id_pedido` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
+  `cantidad` int(10) NOT NULL,
+  `precio` int(10) NOT NULL,
+  PRIMARY KEY (`id_pedido`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+--
 -- Volcado de datos para la tabla `productos`
 --
 
