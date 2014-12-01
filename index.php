@@ -64,8 +64,8 @@
 </header>
 
 <div class="container-fluid">
-    
-<aside >
+
+<aside>
         <div class="border-div">
             <p class="lead">E-Shop PHP</p>
             <ul class="nav nav-pills nav-stacked">
