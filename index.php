@@ -56,7 +56,7 @@
         </div>
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>
-      
+      <button type="button" action="index.php?rt=categoria/index.php" class="btn btn-default navbar-btn navbar-right">Nueva Categoria</button>
       <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
       
 	</div>

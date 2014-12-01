@@ -1,6 +1,6 @@
 <?php 
 
-Class categoriaController extends baseContrloller{
+Class categoriaController extends baseController{
 	
 	public function index() {
 		
@@ -22,10 +22,10 @@ Class categoriaController extends baseContrloller{
 	}
 	
 	public function  altaCategoria(){
-		$items = $_POST['items'];
-		$item = json_decode($items);
+		//$items = $_POST['items'];
+		//$item = json_decode($items);
 		
-		$this->registry->db->insert('categorias', array('nombre'=>$item->nombre, 'descripcion'=>$item->descripcion));
+		$this->registry->db->insert('categorias', array('nombre'=>$_POST['nombre'], 'descripcion'=>$_POST['descripcion']));
 		
 	}
 	
