@@ -63,16 +63,23 @@
 	</nav>
 </header>
 
-<section>
+<div class="container-fluid">
+    
+<aside >
+        <div class="border-div">
+            <p class="lead">E-Shop PHP</p>
+            <ul class="nav nav-pills nav-stacked">
+              <li role="presentation"><a href="index.php?rt=categoria/index">Nueva Categoria</a></li>
+              <li role="presentation"><a href="index.php?rt=product/create">Nuevo Producto</a></li>
+            </ul>
+        </div>
+    <ul id="listadeusuarios"></ul>
+</aside>
 <?php  
 /*** load the controller ***/
  $registry->router->loader(); 
  ?>
-</section>
-<aside>Aside 
-    <button type="button" onclick="location.href = 'index.php?rt=categoria/index';" class="btn btn-default navbar-btn navbar-right">Nueva Categoria</button>
-    <ul id="listadeusuarios"></ul>
-</aside>
+</div>
 <!--/.footer--> 
 <footer class="footer-bottom-fix">
 	<div class="footer" id="footer">

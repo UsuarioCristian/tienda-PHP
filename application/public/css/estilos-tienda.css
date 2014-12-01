@@ -28,6 +28,11 @@ code{
 		 width: 25%;
 	}
 
+	.contenido{
+		 float: left; 
+		 width: 70%;
+	}
+
 	footer{
 		  clear: both; 
 	}
@@ -82,17 +87,23 @@ code{
 			color:#c3c3c3;
 		}
 		.cart{
-			position:fixed;
-			right:0;
-			top:0;
-			width:300px;
+			position:absolute;
+			width:25%;
 			height:100%;
-			background:#ccc;
-			padding:0px 10px;
+			background:#009933;
+			float: left;
+			border-radius: 5px;
+			border:3px solid #333;
+		}
+		.cart-title{
+			color:#FFFFFF;
+			font-weight:bold;
+			font-family: "Impact", sans-serif;
+			text-align:center;
 		}
 		h1{
 			text-align:center;
-			color:#555;
+			
 		}
 		h2{
 			position:absolute;
@@ -119,7 +130,6 @@ code{
 .footer {
 	background: #EDEFF1;
 	height: auto;
-	padding-bottom: 30px;
 	position: relative;
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
@@ -137,7 +147,6 @@ code{
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 27px;
-	padding: 40px 0 10px;
 	text-transform: uppercase;
 }
 .footer ul {
@@ -187,8 +196,28 @@ code{
     width: 40%;
     margin: 0 auto;
 }
+.center-form {
+    width: 60%;
+    margin: 0 auto;
+}
 .panel-login{
 	background-image: url("/images/bkg-green-fields.jpg");
 	background-repeat: no-repeat;
  	background-attachment: fixed;
+}
+.menu-item-list{
+	background:#009933;
+	border-radius: 5px;
+}
+.border-div{
+	padding: 5px 5px 5px 5px;
+}
+
+.headerDivider {
+     border-left:1px solid #38546d; 
+     border-right:1px solid #16222c; 
+     height:80px;
+     position:absolute;
+     right:249px;
+     top:10px; 
 }

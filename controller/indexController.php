@@ -3,10 +3,13 @@
 Class indexController Extends baseController {
 
 public function index() {
-	/*** set a template variable ***/
-    $this->registry->template->welcome = 'Welcome to PHPRO MVC';
+/*** set a template variable ***/
+        $this->registry->template->welcome = 'Productos';
 	/*** load the index template ***/
-    $this->registry->template->show('index');
+		$productos = $this->registry->db->get('productos');
+		$this->registry->template->productos = $productos;
+
+    $this->registry->template->show('product/index');
 }
 
 public function login(){
@@ -14,6 +17,7 @@ public function login(){
 $this->registry->template->show('site/login');
 
 }
+
 }
 
 ?>
