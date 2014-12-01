@@ -15,7 +15,7 @@ code{
 	
 	aside{
 		 float: right;
-		 width: 40%;
+		 width: 20%;
 	}
 
 	.img-logo-nav{
@@ -51,7 +51,11 @@ code{
 	input{
 		border-radius: 5px;
 	}
+.content-fixed{
 
+	width: 100%;
+	height: 100%;
+}
 
 .products{
 			list-style:none;
@@ -178,4 +182,13 @@ code{
 .footer-bottom-fix{
 	position: fixed;
   bottom: 0px;
+}
+.login-form {
+    width: 40%;
+    margin: 0 auto;
+}
+.panel-login{
+	background-image: url("/images/bkg-green-fields.jpg");
+	background-repeat: no-repeat;
+ 	background-attachment: fixed;
 }
