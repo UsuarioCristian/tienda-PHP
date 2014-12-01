@@ -23,12 +23,12 @@ foreach ($productos as $key => $producto) {
 
 
 <div class="cart">
-		<h1>Shopping Cart</h1>
+		<h3 class="cart-title">Shopping Cart</h3>
 		<div style="background:#fff">
-		<table id="cartcontent" fitColumns="true" style="width:300px;height:auto;">
+		<table id="cartcontent" fitColumns="true" style="width:100%;">
 			<thead>
 				<tr>
-					<th field="name" width=140>Name</th>
+					<th field="name" width=100>Name</th>
 					<th field="quantity" width=60 align="right">Quantity</th>
 					<th field="price" width=60 align="right">Price</th>
 				</tr>

@@ -22,10 +22,11 @@ Class categoriaController extends baseController{
 	}
 	
 	public function  altaCategoria(){
-		//$items = $_POST['items'];
+		$categoria = $_POST['categoria'];
+		$categoria = json_encode($categoria);
+		$categoria = json_decode($categoria);
 		//$item = json_decode($items);
-		
-		$this->registry->db->insert('categorias', array('nombre'=>$_POST['nombre'], 'descripcion'=>$_POST['descripcion']));
+		$this->registry->db->insert('categorias', array('nombre'=>$categoria->nombre, 'descripcion'=>$categoria->descripcion));
 		
 	}
 	

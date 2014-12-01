@@ -11,7 +11,12 @@ Class productController Extends baseController {
 
 	        $this->registry->template->show('product/index');
 	}
-
+	public function create() {
+			$categorias = $this->registry->db->get('categorias');
+			$this->registry->template->categorias = $categorias;
+			
+			$this->registry->template->show('product/create');
+	}
 	public function getProductos(){
 
 		$productos = $this->registry->db->get('productos');
@@ -35,10 +40,11 @@ Class productController Extends baseController {
 	
 	public function altaProducto(){
 		$items = $_POST['items'];
+		$item = json_encode($items);
 		$item = json_decode($items);
-	
-		$this->registry->db->insert('productos', array('nombre'=>$item->nombre, 'descripcion'=>$item->descripcion, 'img'=>$item->img,
-				'precio'=>$item->precio, 'id_categoria'=>$item->id_categoria));
+	var_dump($item);
+		$this->registry->db->insert('productos', array('nombre'=>$item->nombre, 'descripcion'=>$item->descripcion, 'id_categoria'=>$item->id_categoria,
+				'precio'=>$item->precio));
 	
 	}
 	
