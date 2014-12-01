@@ -9,6 +9,11 @@ public function index() {
     $this->registry->template->show('index');
 }
 
+public function login(){
+
+$this->registry->template->show('site/login');
+
+}
 }
 
 ?>

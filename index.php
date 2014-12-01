@@ -28,25 +28,25 @@
 	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="application/public/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 	<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="application/public/css/estilos-tienda.css">
-	<script type="text/javascript" src="/tienda-PHP/application/public/js/js-tienda.js"></script>
+	<script type="text/javascript" src="application/public/js/js-tienda.js"></script>
 	
 	<title>PHP Store</title>
 </head>
 <body>
 
 <header>
-	<code><img alt="e-shop" src="application/public/images/logo/logo-big.png"></code>
+	<code><img alt="e-shop" src="application/public/images/logo/logo-big.png" onclick="location.href = 'index.php?rt=index/';"></code>
 	<nav class="navbar navbar-inverse" role="navigation">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="#">
-	        <img alt="e-shop" class="img-logo-nav" src="application/public/images/logo/logo-e.png">
+	        <img alt="e-shop" class="img-logo-nav" src="application/public/images/logo/logo-e.png" onclick="location.href = 'index.php?rt=index/';">
 	      </a>
 	    </div>
 	  
@@ -56,23 +56,23 @@
         </div>
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>
-      <button type="button" action="index.php?rt=categoria/index.php" class="btn btn-default navbar-btn navbar-right">Nueva Categoria</button>
-      <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+      
+      <button type="button" onclick="location.href = 'index.php?rt=index/login';" class="btn btn-default navbar-btn navbar-right">Sign in</button>
       
 	</div>
 	</nav>
 </header>
 
 <section>
-
-</section>
-<section>
 <?php  
 /*** load the controller ***/
  $registry->router->loader(); 
  ?>
 </section>
-<aside>Aside <ul id="listadeusuarios"></ul></aside>
+<aside>Aside 
+    <button type="button" onclick="location.href = 'index.php?rt=categoria/index';" class="btn btn-default navbar-btn navbar-right">Nueva Categoria</button>
+    <ul id="listadeusuarios"></ul>
+</aside>
 <!--/.footer--> 
 <footer class="footer-bottom-fix">
 	<div class="footer" id="footer">
