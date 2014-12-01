@@ -32,5 +32,21 @@ Class productController Extends baseController {
 													      'precio'=>$item->price));
 		}
 	}
+	
+	public function altaProducto(){
+		$items = $_POST['items'];
+		$item = json_decode($items);
+	
+		$this->registry->db->insert('productos', array('nombre'=>$item->nombre, 'descripcion'=>$item->descripcion, 'img'=>$item->img,
+				'precio'=>$item->precio, 'id_categoria'=>$item->id_categoria));
+	
+	}
+	
+	public function borrarProducto(){
+		$item = $_POST['items'];
+		$item = json_decode($item);
+	
+		$this->registry->db->delete('productos', array('nombre'=> $item->nombre));
+	}
 
 }

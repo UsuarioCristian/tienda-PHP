@@ -60,7 +60,6 @@ CREATE TABLE IF NOT EXISTS `productos` (
   `img` varchar(20) COLLATE utf8_bin,
   `descripcion` varchar(140) COLLATE utf8_bin DEFAULT NULL,
   `id_categoria` int(10) NOT NULL,
-  `id_oferta` int(10) DEFAULT NULL,
   `precio` int(20) DEFAULT NULL,
   PRIMARY KEY (`id_producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
