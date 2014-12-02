@@ -87,8 +87,8 @@ code{
 		.cart{
 			position:absolute;
 			width:25%;
-			height:100%;
-			background:#009933;
+			height:50%;
+			background:#5cb85c;
 			float: left;
 			border-radius: 5px;
 			border:3px solid #333;
@@ -187,11 +187,6 @@ code{
 .center-form {
     margin: 30px auto;
     height:250px;
-}
-.panel-login{
-	background-image: url("/images/bkg-green-fields.jpg");
-	background-repeat: no-repeat;
- 	background-attachment: fixed;
 }
 .menu-item-list{
 	background:#009933;

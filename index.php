@@ -35,7 +35,7 @@
 	<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="application/public/css/estilos-tienda.css">
 	<script type="text/javascript" src="application/public/js/js-tienda.js"></script>
-	
+	<link rel="icon" href="application/public/images/logo/logo-e.png" type="image/gif" sizes="16x16">
 	<title>PHP Store</title>
 </head>
 <body>
@@ -69,8 +69,9 @@
         <div class="border-div">
             <p class="lead">E-Shop PHP</p>
             <ul class="nav nav-pills nav-stacked">
-              <li role="presentation"><a href="index.php?rt=categoria/index">Nueva Categoria</a></li>
+              <li role="presentation"><a icon="glyphicon glyphicon-tasks" href="index.php?rt=categoria/index">Nueva Categoria</a></li>
               <li role="presentation"><a href="index.php?rt=product/create">Nuevo Producto</a></li>
+              <li role="presentation"><a href="index.php?rt=product/view">Vista Producto</a></li>
             </ul>
         </div>
     <ul id="listadeusuarios"></ul>
