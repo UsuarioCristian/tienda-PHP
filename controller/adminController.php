@@ -26,7 +26,7 @@ Class adminController extends baseController{
 		foreach ($users as $user){
 			if ($user['nickname'] == $username) {				
 				if ($user['password'] == $password) {
-					$this->debug_to_console ( "Login correcto" );
+					$this->debug_to_console ( "Login correcto");
 					$encontre = true;
 					if (! isset ( $_SESSION )) {
 						session_start ();
@@ -54,6 +54,40 @@ Class adminController extends baseController{
 			$output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
 	
 		echo $output;
+	}
+	
+	public function pedidos(){
+		$this->registry->template->show ( 'admin/pedidos' );
+	}
+	public function cancelarPedido() {
+		$conexion = mysqli_connect ( "localhost", "admin", "admin", "php_tarea" );
+		mysqli_set_charset ( $conexion, "utf8" );
+		$peticion = "UPDATE pedidos SET estado=2 WHERE id_pedido = '".$_POST['id']."'";
+		if($resultado = mysqli_query ( $conexion, $peticion )){
+			$this->debug_to_console("Entrooo");
+		}else{
+			$this->debug_to_console("No anda");
+		}
+		
+		mysqli_close ( $conexion );
+		
+		$this->registry->template->show ( 'admin/pedidos' );
+	}
+	
+	public function entregarPedido(){
+		$conexion = mysqli_connect ( "localhost", "admin", "admin", "php_tarea" );
+		mysqli_set_charset ( $conexion, "utf8" );
+		$peticion = "UPDATE pedidos SET estado=1 WHERE id_pedido = '".$_POST['id']."'";
+		if($resultado = mysqli_query ( $conexion, $peticion )){
+			$this->debug_to_console("Entrooo");
+		}else{
+			$this->debug_to_console("No anda");
+		}
+		
+		mysqli_close ( $conexion );
+		
+		$this->registry->template->show ( 'admin/pedidos' );
+		
 	}
 }
 
