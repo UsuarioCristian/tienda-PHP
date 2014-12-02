@@ -7,14 +7,13 @@
     <label>Descripcion</label>
     <input type="text" name="items[descripcion]" placeholder="Descripcion…">
     <span class="help-block">Escribe la descripcion.</span>
-    <select name="items[categoria]" class="input-medium form-control">
+    <select name="items[id_categoria]" class="input-medium form-control">
       <?php
         foreach ($categorias as $key => $categoria) {
                 $id = $categoria['id_categoria'];
                 $name = $categoria['nombre'];
         ?>  
-                <option><?php echo $name; ?></option>
-        <?php
+                <?php echo '<option value="'.$id.'" >'.$name.'</option>';
         }
         ?>
     </select>

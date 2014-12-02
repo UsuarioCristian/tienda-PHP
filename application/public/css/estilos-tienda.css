@@ -12,7 +12,7 @@ code{
 	footer{
 		margin: 0.5% 1.5% 1.5% 1.5%;
 	}
-	
+
 	aside{
 		 float: right;
 		 width: 20%;
@@ -33,11 +33,9 @@ code{
 		 width: 70%;
 	}
 
-	footer{
-		  clear: both; 
-	}
-
 	fieldset{
+		height: 30px;
+		overflow: inherit;
 		margin: 0;
 		border: 0;
 		padding: 20px;
@@ -121,16 +119,11 @@ code{
 .full {
     width: 100%;	
 }
-.gap {
-	height: 30px;
-	width: 100%;
-	clear: both;
-	display: block;
-}
 .footer {
 	background: #EDEFF1;
 	height: auto;
-	position: relative;
+	position:absolute;
+   	bottom:0;
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
 	border-top: 1px solid #DDDDDD;
@@ -159,7 +152,6 @@ code{
 }
 .footer ul li a {
 	padding: 0 0 5px 0;
-	display: block;
 }
 .footer a {
 	color: #78828D
@@ -170,10 +162,6 @@ code{
 	line-height: normal;
 	margin-bottom: 0 !important;
 	padding-bottom: 0;
-}
-.bg-gray {
-	background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
-	box-shadow: 0 1px 0 #B4B3B3;
 }
 .footer-bottom {
 	background: #E3E3E3;
@@ -197,8 +185,8 @@ code{
     margin: 0 auto;
 }
 .center-form {
-    width: 60%;
-    margin: 0 auto;
+    margin: 30px auto;
+    height:250px;
 }
 .panel-login{
 	background-image: url("/images/bkg-green-fields.jpg");
