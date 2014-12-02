@@ -25,6 +25,7 @@ if (! isset ( $_SESSION ["isAdmin"] )) {
 			<li role="presentation"><a href="index.php?rt=product/view">Vista
 					Producto</a></li>
 			<li role="presentation"><a href="index.php?rt=admin/pedidos">Pedidos</a></li>
+			<li role="presentation"><a href="index.php?rt=oferta/create">Nueva Oferta</a></li>
 		</ul>
 	</div>
 
