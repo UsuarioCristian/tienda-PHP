@@ -9,7 +9,7 @@ foreach ($productos as $key => $producto) {
 			<a href="#" class="item">
 				<!-- <img src="<?php echo $img_url; ?>"/> -->
 				<div>
-					<p>Name:<?php echo $name; ?></p>
+					<p><?php echo $name; ?></p>
 					<p>Price:<span><?php echo $price; ?></span></p>
 				</div>
 			</a>

@@ -2,10 +2,10 @@
     <fieldset>
     <legend>Producto Nuevo</legend>
     <label>Nombre</label>
-    <input type="text" name="items[nombre]" placeholder="Nombre Categoria…">
+    <input type="text" name="items[nombre]" placeholder="Nombre Categoria">
     <span class="help-block">Escribe un nombre para la categoria.</span>
     <label>Descripcion</label>
-    <input type="text" name="items[descripcion]" placeholder="Descripcion…">
+    <input type="text" name="items[descripcion]" placeholder="Descripcion">
     <span class="help-block">Escribe la descripcion.</span>
     <select name="items[id_categoria]" class="input-medium form-control">
       <?php
