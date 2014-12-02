@@ -7,7 +7,7 @@ Class categoriaController extends baseController{
 		$this->registry->template->welcome = 'ABM Categorias';
 		/*** load the index template ***/
 		$categorias = $this->registry->db->get('categorias');
-		$this->registry->template->productos = $categorias;
+		$this->registry->template->categorias = $categorias;
 	
 		$this->registry->template->show('categoria/index');
 	}
