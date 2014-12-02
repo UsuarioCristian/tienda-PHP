@@ -10,8 +10,9 @@ if (! isset ( $_SESSION ["isAdmin"] )) {
 
 <?php 
 	if (!$_SESSION["isAdmin"]){
-		echo "<a href='index.php?rt=admin/login'>Login admin</a>";
-	}else{
+?>
+		<button type="button" onclick="location.href = 'index.php?rt=admin/login';" class="btn btn-success btn-lg navbar-btn navbar-left">Sign in</button>
+<?php	}else{
 ?>
 <aside>
 	<div class="border-div">

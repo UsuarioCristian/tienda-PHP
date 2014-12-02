@@ -36,7 +36,7 @@ while($fila = mysqli_fetch_array($resultado)) {
 			break;
 	}
 	
-	echo '><td>' . $fila ['nombre'] . "</td><td>" . $fila ['cantidad'] . '</td><td>' . '</td><td>' . $diestado . '</td><td><form action="index.php?rt=admin/entregarPedido" method="POST"><input type="hidden" name="id" value="'.$fila ['id_pedido'].'"><button type= "submit">Pedido entregado</button></td></form><td><form action="index.php?rt=admin/cancelarPedido" method="POST"><input type="hidden" name="id" value="'.$fila ['id_pedido'].'"><button type="submit">Cancelar pedido</button></form></td></tr>';
+	echo '><td>' . $fila ['nombre'] . "</td><td> Cantidad = " . $fila ['cantidad'] . '</td><td>' . '</td><td>' . $diestado . '</td><td><form action="index.php?rt=admin/entregarPedido" method="POST"><input type="hidden" name="id" value="'.$fila ['id_pedido'].'"><button type= "submit">Pedido entregado</button></td></form><td><form action="index.php?rt=admin/cancelarPedido" method="POST"><input type="hidden" name="id" value="'.$fila ['id_pedido'].'"><button type="submit">Cancelar pedido</button></form></td></tr>';
 } 
 mysqli_close($conexion);
 ?>
