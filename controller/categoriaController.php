@@ -22,11 +22,22 @@ Class categoriaController extends baseController{
 	}
 	
 	public function  altaCategoria(){
-		$categoria = $_POST['categoria'];
-		$categoria = json_encode($categoria);
-		$categoria = json_decode($categoria);
-		//$item = json_decode($items);
-		$this->registry->db->insert('categorias', array('nombre'=>$categoria->nombre, 'descripcion'=>$categoria->descripcion));
+		session_start ();
+		if (!isset($_SESSION ["isAdmin"])) {			
+			$_SESSION ["isAdmin"] = false;
+		}		
+		
+		if($_SESSION["isAdmin"]){
+			$categoria = $_POST['categoria'];
+			$categoria = json_encode($categoria);
+			$categoria = json_decode($categoria);
+			//$item = json_decode($items);
+			$this->registry->db->insert('categorias', array('nombre'=>$categoria->nombre, 'descripcion'=>$categoria->descripcion));
+			$this->registry->template->show('admin/index');
+		}else {
+			$this->registry->template->show('admin/index');
+		}
+		
 		
 	}
 	

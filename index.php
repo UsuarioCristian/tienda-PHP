@@ -65,17 +65,7 @@
 
 <div class="container-fluid">
 
-<aside>
-        <div class="border-div">
-            <p class="lead">E-Shop PHP</p>
-            <ul class="nav nav-pills nav-stacked">
-              <li role="presentation"><a icon="glyphicon glyphicon-tasks" href="index.php?rt=categoria/index">Nueva Categoria</a></li>
-              <li role="presentation"><a href="index.php?rt=product/create">Nuevo Producto</a></li>
-              <li role="presentation"><a href="index.php?rt=product/view">Vista Producto</a></li>
-            </ul>
-        </div>
-    <ul id="listadeusuarios"></ul>
-</aside>
+
 <?php  
 /*** load the controller ***/
  $registry->router->loader(); 
