@@ -38,6 +38,7 @@ Class productController Extends baseController {
 			# code...
 			$this->registry->db->insert('pedidos', array('nombre'=>$item->name,
 													      'cantidad'=>$item->quantity,
+													      'estado'=>0,
 													      'precio'=>$item->price));
 		}
 	}

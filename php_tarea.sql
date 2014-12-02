@@ -78,6 +78,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
+
+CREATE TABLE IF NOT EXISTS `administradores` (
+  `id_admin` int(10) NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(20) COLLATE utf8_bin NOT NULL,  
+  `password` varchar(100) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
 --
 -- Table structure for table `pedidos`
 --
@@ -87,6 +95,7 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
   `cantidad` int(10) NOT NULL,
   `precio` int(10) NOT NULL,
+  `estado` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_pedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
@@ -101,6 +110,9 @@ INSERT INTO `productos` (`id_producto`, `id_categoria`, `img`, `nombre`, `descri
 (4, 1, 'iPod-Shuffle.png', 'iPod Shuffle', 'The new iPod shuffle.', 49),
 (5, 1, 'iPod-Nano.png', 'iPod Nano', 'The new iPod Nano.', 99),
 (6, 2, 'Apple-TV.png', 'Apple TV', 'The new Apple TV. Buy it now!', 300);
+
+INSERT INTO `administradores` (`id_admin`, `nickname`, `password`) VALUES
+(1, 'admin', 'admin');
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
