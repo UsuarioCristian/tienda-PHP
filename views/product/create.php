@@ -1,4 +1,4 @@
-<form class="center-form" action="index.php?rt=product/altaProducto" method="POST">
+<form class="center-form" enctype="multipart/form-data" action="index.php?rt=product/altaProducto" method="POST">
     <fieldset>
     <legend>Producto Nuevo</legend>
     <label>Nombre</label>
@@ -17,6 +17,8 @@
         }
         ?>
     </select>
+    <label>Imagen</label>
+    <input type="file" name="fileToUpload" id="fileToUpload">
     <label>Precio</label>
         <input type="number" name="items[precio]" placeholder="Precio">
     <span class="help-block">Precio del producto</span>
