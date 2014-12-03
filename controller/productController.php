@@ -18,8 +18,17 @@ Class productController Extends baseController {
 			$this->registry->template->show('product/create');
 	}
 	public function view() {
-
-			$this->registry->template->show('product/viewProduct');
+			$id_producto = htmlspecialchars($_GET["id"]);		
+		$productos = $this->registry->db->get ( 'productos' );
+		
+		$encontre = false;
+		foreach ($productos as $producto){
+			if ($producto['id_producto'] == $id_producto) {
+				$this->registry->template->producto = $producto;
+				$encontre = true;
+			}
+		}
+		$this->registry->template->show('product/viewProduct');
 	}
 	public function getProductos(){
 

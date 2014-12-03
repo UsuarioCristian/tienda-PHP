@@ -6,7 +6,7 @@ $(function(){
 	$('#cartcontent').datagrid({
 		singleSelect:true
 	});
-	$('.item').draggable({
+	$('.thumbnail-drop').draggable({
 		revert:true,
 		proxy:'clone',
 		onStartDrag:function(){
@@ -25,8 +25,8 @@ $(function(){
 			$(source).draggable('options').cursor='not-allowed';
 		},
 		onDrop:function(e,source){
-			var name = $(source).find('p:eq(0)').html();
-			var price = $(source).find('p:eq(1) span').html();
+			var price = $(source).find('p:eq(0)').html();
+			var name = $(source).find('p:eq(1)').html();
 			console.log('Arrastraste name:'+name+ ' con price:'+price);
 			addProduct(name, parseFloat(price));
 		}
@@ -63,6 +63,20 @@ function addProduct(name,price){
 	console.log(data);
 }
 
+function sticky_relocate() {
+    var window_top = $(window).scrollTop();
+    var div_top = $('#sticky-anchor').offset().top;
+    if (window_top > div_top) {
+        $('#sticky').addClass('stick');
+    } else {
+        $('#sticky').removeClass('stick');
+    }
+}
+
+$(function () {
+    $(window).scroll(sticky_relocate);
+    sticky_relocate();
+});
 
 
 function guardarPedido(items)

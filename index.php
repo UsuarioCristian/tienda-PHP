@@ -41,7 +41,7 @@
 <body>
 
 <header>
-	<code><img alt="e-shop" src="application/public/images/logo/logo-big.png" onclick="location.href = 'index.php?rt=index/';"></code>
+	<code><img alt="e-shop" class="content-fixed img-logo-big" src="application/public/images/logo/logo-big.png" onclick="location.href = 'index.php?rt=index/';"></code>
 	<nav class="navbar navbar-inverse" role="navigation">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
@@ -63,16 +63,14 @@
 	</nav>
 </header>
 
-<div class="container-fluid">
-
-
 <?php  
 /*** load the controller ***/
  $registry->router->loader(); 
  ?>
+
 </div>
 <!--/.footer--> 
-<footer class="footer-bottom-fix">
+<footer>
 	<div class="footer" id="footer">
         <div class="container">
             <div class="row">
