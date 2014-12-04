@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2014 at 04:31 PM
+-- Generation Time: Dec 03, 2014 at 09:20 PM
 -- Server version: 5.5.40
 -- PHP Version: 5.3.10-1ubuntu3.15
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `php_tarea`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `administradores`
+--
+
+CREATE TABLE IF NOT EXISTS `administradores` (
+  `id_admin` int(10) NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(20) COLLATE utf8_bin NOT NULL,
+  `password` varchar(100) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id_admin`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `administradores`
+--
+
+INSERT INTO `administradores` (`id_admin`, `nickname`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -51,18 +71,57 @@ CREATE TABLE IF NOT EXISTS `ofertas` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pedidos`
+--
+
+CREATE TABLE IF NOT EXISTS `pedidos` (
+  `id_pedido` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
+  `cantidad` int(10) NOT NULL,
+  `precio` int(10) NOT NULL,
+  `estado` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id_pedido`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `productos`
 --
 
 CREATE TABLE IF NOT EXISTS `productos` (
   `id_producto` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
-  `img` varchar(20) COLLATE utf8_bin,
-  `descripcion` varchar(140) COLLATE utf8_bin DEFAULT NULL,
+  `img` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `descripcion` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `id_categoria` int(10) NOT NULL,
   `precio` int(20) DEFAULT NULL,
   PRIMARY KEY (`id_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `productos`
+--
+
+INSERT INTO `productos` (`id_producto`, `nombre`, `img`, `descripcion`, `id_categoria`, `precio`) VALUES
+(1, 'iPod', 'iPod.png', 'The original and popular iPod.', 1, 200),
+(2, 'iMac', 'iMac.png', 'The iMac computer.', 2, 1200),
+(3, 'iPhone', 'iPhone.png', 'This is the new iPhone.', 1, 400),
+(4, 'iPod Shuffle', 'iPod-Shuffle.png', 'The new iPod shuffle.', 1, 49),
+(5, 'iPod Nano', 'iPod-Nano.png', 'The new iPod Nano.', 1, 99),
+(6, 'Apple TV', 'Apple-TV.png', 'The new Apple TV. Buy it now!', 2, 300);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stock`
+--
+
+CREATE TABLE IF NOT EXISTS `stock` (
+  `id_producto` int(10) NOT NULL,
+  `stock` int(20) NOT NULL,
+  KEY `id_producto` (`id_producto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -77,43 +136,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(100) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
-
-
-CREATE TABLE IF NOT EXISTS `administradores` (
-  `id_admin` int(10) NOT NULL AUTO_INCREMENT,
-  `nickname` varchar(20) COLLATE utf8_bin NOT NULL,  
-  `password` varchar(100) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
-
---
--- Table structure for table `pedidos`
---
-
-CREATE TABLE IF NOT EXISTS `pedidos` (
-  `id_pedido` int(10) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
-  `cantidad` int(10) NOT NULL,
-  `precio` int(10) NOT NULL,
-  `estado` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id_pedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
-
---
--- Volcado de datos para la tabla `productos`
---
-
-INSERT INTO `productos` (`id_producto`, `id_categoria`, `img`, `nombre`, `descripcion`, `precio`) VALUES
-(1, 1, 'iPod.png', 'iPod', 'The original and popular iPod.', 200),
-(2, 2, 'iMac.png', 'iMac', 'The iMac computer.', 1200),
-(3, 1, 'iPhone.png', 'iPhone', 'This is the new iPhone.', 400),
-(4, 1, 'iPod-Shuffle.png', 'iPod Shuffle', 'The new iPod shuffle.', 49),
-(5, 1, 'iPod-Nano.png', 'iPod Nano', 'The new iPod Nano.', 99),
-(6, 2, 'Apple-TV.png', 'Apple TV', 'The new Apple TV. Buy it now!', 300);
-
-INSERT INTO `administradores` (`id_admin`, `nickname`, `password`) VALUES
-(1, 'admin', 'admin');
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

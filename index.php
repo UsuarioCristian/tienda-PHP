@@ -70,22 +70,22 @@
 
 </div>
 <!--/.footer--> 
-<footer>
+<!-- <footer>
 	<div class="footer" id="footer">
         <div class="container">
             <div class="row">
             </div>
-            <!--/.row--> 
+            /.row 
         </div>
-        <!--/.container--> 
+        /.container
     </div>
-    <!--/.footer-->
+   /.footer
     <div class="footer-bottom">
         <div class="container">
             <p class="pull-left"> Copyright &copy; Footer E-shop 2014. All right reserved. </p>
         </div>
     </div>
-</footer>
+</footer> -->
 
 </body>
 </html>

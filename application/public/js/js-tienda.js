@@ -64,13 +64,17 @@ function addProduct(name,price){
 }
 
 function sticky_relocate() {
+    var cart = document.getElementById("sticky"); 
+     if (typeof(cart) != 'undefined' && cart != null ) {
     var window_top = $(window).scrollTop();
     var div_top = $('#sticky-anchor').offset().top;
-    if (window_top > div_top) {
-        $('#sticky').addClass('stick');
-    } else {
-        $('#sticky').removeClass('stick');
+       if (window_top > div_top) {
+       		$('#sticky').addClass('stick');
+    	} else {
+        	$('#sticky').removeClass('stick');
+    	}
     }
+    
 }
 
 $(function () {

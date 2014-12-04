@@ -15,6 +15,9 @@ Class productController Extends baseController {
 			$categorias = $this->registry->db->get('categorias');
 			$this->registry->template->categorias = $categorias;
 
+			$productos = $this->registry->db->get('productos');
+			$this->registry->template->productos = $productos;
+
 			$this->registry->template->show('product/create');
 	}
 	public function view() {

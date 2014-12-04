@@ -1,4 +1,3 @@
-<div class="container-fluid">
 <div id="sticky-anchor"></div>
 <div id="sticky"><div class="cart">
         <h3 class="cart-title">Shopping Cart</h3>
