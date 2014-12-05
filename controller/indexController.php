@@ -18,6 +18,10 @@ $this->registry->template->show('site/login');
 
 }
 
+public function registro(){
+	$this->registry->template->show('site/registro');
+}
+
 }
 
 ?>

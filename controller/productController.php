@@ -43,15 +43,31 @@ Class productController Extends baseController {
 	}
 
 	public function guardarPedido(){
-		$items = $_POST['items'];
-		$items = json_decode($items);
-
-		foreach ($items as $key => $item) {
-			# code...
-			$this->registry->db->insert('pedidos', array('nombre'=>$item->name,
-													      'cantidad'=>$item->quantity,
-													      'estado'=>0,
-													      'precio'=>$item->price));
+		if (! isset ( $_SESSION )) {
+			session_start ();
+		}
+		if (! isset ( $_SESSION ["isLogin"] )) {
+			$this->registry->template->show('site/login');
+		}else{
+			if ($_SESSION ["isLogin"] == false){
+				$this->registry->template->show('site/login');	//Como es por ajax no me deja cargar la pag
+			}else{
+				
+				$items = $_POST['items'];
+				$items = json_decode($items);
+					
+				foreach ($items as $key => $item) {
+					# code...
+					$this->registry->db->insert('pedidos', array('nombre'=>$item->name,
+					'cantidad'=>$item->quantity,
+					'estado'=>0,
+					'precio'=>$item->price));
+				}
+			
+			
+			}	
+		
+		
 		}
 	}
 	

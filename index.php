@@ -56,9 +56,20 @@
         </div>
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>
-      
-      <button type="button" onclick="location.href = 'index.php?rt=index/login';" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-      
+	<?php
+	if (! isset ( $_SESSION )) {
+		session_start ();
+	}
+	if (! isset ( $_SESSION ["isLogin"] )) {
+		$_SESSION ["isLogin"] = false;
+	}	
+	?>
+	<?php 
+	if (!$_SESSION["isLogin"]){
+	?>
+      <button type="button" onclick="location.href = 'index.php?rt=index/login';" class="btn btn-default navbar-btn navbar-right">Log in</button>
+      <button type="button" onclick="location.href = 'index.php?rt=index/registro';" class="btn btn-default navbar-btn navbar-right">Sign up</button>
+    <?php } ?>  
 	</div>
 	</nav>
 </header>

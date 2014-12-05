@@ -29,7 +29,7 @@
       <div class="modal-body">
           <div class="row">
               <div class="col-xs-8">
-                  <form id="loginForm" method="POST" action="index.php" novalidate="novalidate">
+                  <form id="loginForm" method="POST" action="index.php?rt=user/loginUser" novalidate="novalidate">
                       <div class="form-group">
                           <label for="username" class="control-label">Username</label>
                           <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
