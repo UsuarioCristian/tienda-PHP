@@ -41,6 +41,17 @@ Class productController Extends baseController {
 		$this->registry->template->show('product/list');
 
 	}
+	public function stock(){
+		
+		$this->registry->db->join('stock', 'productos.id_producto = stock.id_producto', '');
+		//$this->registry->$db->where("u.id", 6);
+		$prodstock = $this->registry->db->get("productos", null, "productos.id_producto, productos.nombre, stock.stock");
+		$this->registry->template->prodstock = $prodstock;
+		$productos = $this->registry->db->get('productos');
+		$this->registry->template->productos = $productos;
+		$this->registry->template->show('product/stock');
+
+	}	
 
 	public function guardarPedido(){
 		if (! isset ( $_SESSION )) {
@@ -76,11 +87,11 @@ Class productController Extends baseController {
 		if (!isset($_SESSION ["isAdmin"])) {
 			$_SESSION ["isAdmin"] = false;
 		}
-		
+		var_dump($_SESSION ["isAdmin"]);
 		if($_SESSION["isAdmin"]){
 			$items = $_POST ['items'];
-			$item = json_encode ( $items );
-			$item = json_decode ( $item );
+			//$item = json_encode ( $items );
+			$item = json_decode ( $items );
 			var_dump ( $item );
 			
 			var_dump ( $_FILES ['fileToUpload'] );
@@ -142,6 +153,35 @@ Class productController Extends baseController {
 			$item = json_decode($item);
 		
 			$this->registry->db->delete('productos', array('nombre'=> $item->nombre));
+		}
+
+		public function ingresoStock(){
+		session_start ();
+		if (!isset($_SESSION ["isAdmin"])) {			
+			$_SESSION ["isAdmin"] = false;
+		}		
+		
+		if($_SESSION["isAdmin"]){
+			$stock = $_POST['stock'];
+			$stock = json_encode($stock);
+			$stock = json_decode($stock);
+			//$item = json_decode($items);
+			var_dump($stock);
+			$this->registry->db->where('id_producto', $stock->id_producto);
+			$oldstock = $this->registry->db->getOne('stock');
+			var_dump($oldstock);
+			print_r($oldstock['id_producto']);
+			if (isset($oldstock['id_producto'])) {
+				$this->registry->db->where('id_producto', $stock->id_producto);
+				$this->registry->db->update('stock', array('id_producto'=>$stock->id_producto,
+				 'stock'=>($stock->stock+$oldstock['stock'])));
+			} else{
+				$this->registry->db->insert('stock', array('id_producto'=>$stock->id_producto, 'stock'=>$stock->stock));
+				$this->stock();
+			}
+		}else {
+			$this->registry->template->show('admin/index');
+		}
 		}
 
 }

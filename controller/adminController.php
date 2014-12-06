@@ -34,6 +34,7 @@ Class adminController extends baseController{
 					$_SESSION ["nickname"] = $username;
 					$_SESSION ["isAdmin"] = true;
 					$_SESSION ["isLogin"] = true;
+					var_dump($_SESSION);
 					$this->registry->template->show ( 'admin/index' );
 				} else {
 					$this->debug_to_console ( "PASS INCORRECTA" );

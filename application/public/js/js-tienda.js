@@ -94,7 +94,6 @@ function guardarPedido(items)
             }
 	});
 }
-
 /*	
 	procesarDatosUsuario = function (data) {        
     	if (!data.huboError){

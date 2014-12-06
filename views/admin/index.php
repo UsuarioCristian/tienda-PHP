@@ -22,10 +22,9 @@ if (! isset ( $_SESSION ["isAdmin"] )) {
 				href="index.php?rt=categoria/index">Nueva Categoria</a></li>
 			<li role="presentation"><a href="index.php?rt=product/create">Nuevo
 					Producto</a></li>
-			<li role="presentation"><a href="index.php?rt=product/view">Vista
-					Producto</a></li>
 			<li role="presentation"><a href="index.php?rt=admin/pedidos">Pedidos</a></li>
 			<li role="presentation"><a href="index.php?rt=oferta/create">Nueva Oferta</a></li>
+			<li role="presentation"><a href="index.php?rt=product/stock">Gestion Stock</a></li>
 		</ul>
 	</div>
 
