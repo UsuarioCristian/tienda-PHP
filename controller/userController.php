@@ -21,7 +21,9 @@ Class userController Extends baseController {
 	
 	public function registroUser(){
 		$username = $_POST ['username'];
-		$password = $_POST ['password'];		
+		$password = $_POST ['password'];
+		$name = $_POST ['name'];
+		$adress = $_POST ['adress'];
 		$usuarios = $this->registry->db->get('usuarios');
 		
 		$encontre = false;
@@ -41,7 +43,7 @@ Class userController Extends baseController {
 			$_SESSION ["nickname"] = $username;
 			$_SESSION ["isAdmin"] = false;
 			$_SESSION ["isLogin"] = true;
-			$this->registry->db->insert('usuarios', array('nickname'=>$username, 'password'=>$password));
+			$this->registry->db->insert('usuarios', array('nickname'=>$username, 'password'=>$password,'name'=>$name, 'adress'=>$adress));
 			
 			$this->registry->template->show ( 'user/index' );
 		}	

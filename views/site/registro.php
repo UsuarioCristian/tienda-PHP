@@ -17,6 +17,16 @@
                           <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
                           <span class="help-block"></span>
                       </div>
+                      <div class="form-group">
+                          <label for="adress" class="control-label">Adress</label>
+                          <input type="text" class="form-control" id="adress" name="adress" value="" required="" title="Please enter you adress">
+                          <span class="help-block"></span>
+                      </div>
+                      <div class="form-group">
+                          <label for="name" class="control-label">Name</label>
+                          <input type="text" class="form-control" id="name" name="name" value="" required="" title="Please enter you name">
+                          <span class="help-block"></span>
+                      </div>
                       <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
                       <button type="submit" class="btn btn-success btn-block">Sign up</button>
                   </form>

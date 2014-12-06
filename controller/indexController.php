@@ -22,6 +22,17 @@ public function registro(){
 	$this->registry->template->show('site/registro');
 }
 
+public function logout(){
+	if (! isset ( $_SESSION )) {
+		session_start ();
+	}
+	if (isset ( $_SESSION ["isLogin"] ) && $_SESSION["isLogin"]) {
+		session_unset();
+		session_destroy();
+	}
+		$this->registry->template->show ( 'user/index' );
+}
+
 }
 
 ?>

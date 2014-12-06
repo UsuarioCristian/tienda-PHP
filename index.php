@@ -67,9 +67,12 @@
 	<?php 
 	if (!$_SESSION["isLogin"]){
 	?>
-      <button type="button" onclick="location.href = 'index.php?rt=index/login';" class="btn btn-default navbar-btn navbar-right">Log in</button>
-      <button type="button" onclick="location.href = 'index.php?rt=index/registro';" class="btn btn-default navbar-btn navbar-right">Sign up</button>
-    <?php } ?>  
+      <button type="button" onclick="location.href = 'index.php?rt=index/login';" class="btn btn-success navbar-btn navbar-right">Log in</button>
+      <button type="button" onclick="location.href = 'index.php?rt=index/registro';" class="btn btn-primary navbar-btn navbar-right">Sign up</button>
+    <?php
+	 }else{ ?>
+	 	<button type="button" onclick="location.href = 'index.php?rt=index/logout';" class="btn btn-success navbar-btn navbar-right">Log out</button>
+	 <?php }?>  
 	</div>
 	</nav>
 </header>

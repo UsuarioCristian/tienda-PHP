@@ -90,7 +90,7 @@ function guardarPedido(items)
             url: "index.php?rt=product/guardarPedido",
             data: 'items='+JSON.stringify(items),
             success: function(msg){
-                console.log(msg);
+            	document.location.href = "";
             }
 	});
 }
