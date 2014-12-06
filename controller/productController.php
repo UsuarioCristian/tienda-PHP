@@ -83,7 +83,9 @@ Class productController Extends baseController {
 	}
 	
 	public function altaProducto(){
-		session_start ();
+		if (! isset ( $_SESSION )) {
+			session_start ();
+		}
 		if (!isset($_SESSION ["isAdmin"])) {
 			$_SESSION ["isAdmin"] = false;
 		}
@@ -138,6 +140,7 @@ Class productController Extends baseController {
 							'id_categoria' => $item->id_categoria,
 							'precio' => $item->precio 
 					) );
+					$this->registry->template->show('admin/index');
 					echo '<div class="alert alert-success" role="alert">' . "The file " . basename ( $_FILES ["fileToUpload"] ["name"] ) . " has been uploaded." . '</div>';
 				} else {
 					echo '<div class="alert alert-danger" role="alert">' . "Sorry, there was an error uploading your file." . '</div>';
