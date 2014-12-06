@@ -22,7 +22,9 @@ Class categoriaController extends baseController{
 	}
 	
 	public function  altaCategoria(){
-		session_start ();
+		if (! isset ( $_SESSION )) {
+			session_start ();
+		}
 		if (!isset($_SESSION ["isAdmin"])) {			
 			$_SESSION ["isAdmin"] = false;
 		}		
