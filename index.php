@@ -50,9 +50,9 @@
 	      </a>
 	    </div>
 	  
-	  <form class="navbar-form navbar-left" role="search">
+	  <form class="navbar-form navbar-left" action="index.php?rt=index/buscar" method="POST" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Busqueda">
+          <input type="text" id="busqueda" name="b" class="form-control" placeholder="Busqueda">
         </div>
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>
@@ -77,6 +77,7 @@
 	</nav>
 </header>
 
+<table id="resultado" class="table table-hover"></table>
 <?php  
 /*** load the controller ***/
  $registry->router->loader(); 

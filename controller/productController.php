@@ -159,7 +159,10 @@ Class productController Extends baseController {
 		}
 
 		public function ingresoStock(){
-		session_start ();
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	    } 
 		if (!isset($_SESSION ["isAdmin"])) {			
 			$_SESSION ["isAdmin"] = false;
 		}		
@@ -169,19 +172,17 @@ Class productController Extends baseController {
 			$stock = json_encode($stock);
 			$stock = json_decode($stock);
 			//$item = json_decode($items);
-			var_dump($stock);
 			$this->registry->db->where('id_producto', $stock->id_producto);
 			$oldstock = $this->registry->db->getOne('stock');
-			var_dump($oldstock);
-			print_r($oldstock['id_producto']);
 			if (isset($oldstock['id_producto'])) {
 				$this->registry->db->where('id_producto', $stock->id_producto);
 				$this->registry->db->update('stock', array('id_producto'=>$stock->id_producto,
 				 'stock'=>($stock->stock+$oldstock['stock'])));
 			} else{
 				$this->registry->db->insert('stock', array('id_producto'=>$stock->id_producto, 'stock'=>$stock->stock));
-				$this->stock();
+				
 			}
+			$this->stock();
 		}else {
 			$this->registry->template->show('admin/index');
 		}

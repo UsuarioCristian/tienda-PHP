@@ -87,7 +87,7 @@ Class adminController extends baseController{
 		}
 		
 		mysqli_close ( $conexion );
-		
+
 		$this->registry->template->show ( 'admin/pedidos' );
 		
 	}

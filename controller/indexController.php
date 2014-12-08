@@ -33,6 +33,20 @@ public function logout(){
 		$this->registry->template->show ( 'user/index' );
 }
 
-}
 
-?>
+       
+function buscar() {
+
+  	$buscar = $_POST['b'];
+    if(!empty($buscar)) {
+
+	    $this->registry->db->where('nombre', '%'.$_POST['b'].'%','like');
+		$productos = $this->registry->db->get('productos');
+
+		$this->registry->template->productos = $productos;
+
+   	 	$this->registry->template->show('product/busqueda');
+	}
+
+}
+}

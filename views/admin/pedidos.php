@@ -1,5 +1,5 @@
 
-<table border=1>
+<table class="table table-hover">
 <?php
 
 $conexion = mysqli_connect("localhost","admin","admin","php_tarea");
